@@ -23,9 +23,9 @@ def instantiate_loader(model_name, loader_cls, data):
 
 
 if __name__ == '__main__':
-    argparser = argparse.ArgumentParser()
-    argparser.add_argument('--models', type=str, default='models.yaml')
-    argparser.add_argument('--output_dir', type=str, default='models')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--models', type=str, default='models.yaml')
+    parser.add_argument('--output_dir', type=str, default='models')
 
-    args = argparser.parse_args()
+    args = parser.parse_args()
     main(args)
