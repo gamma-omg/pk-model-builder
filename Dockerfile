@@ -1,16 +1,17 @@
+# Builder
 FROM python:3.10-slim as builder
+
+RUN apt-get update && apt-get install -y git git-lfs
 
 COPY scripts/requirements.txt /builder/
 WORKDIR /builder
 RUN pip install -r requirements.txt
 
-COPY config scripts /builder/
-RUN python scripts/load-models.py --models="config/models.yaml" --output_dir="models"
+COPY . /builder/
+RUN python scripts/load_models.py --models="config/models.yaml" --output_dir="models"
 
-
+# Application
 FROM runpod/stable-diffusion:web-automatic-2.1.10
-
-RUN pip install -r scripts/requirements.txt
 
 RUN rm /workspace/stable-diffusion-webui/models/Stable-diffusion/*
 COPY --from=builder /builder/models/* /workspace/stable-diffusion-webui/models/Stable-diffusion/
