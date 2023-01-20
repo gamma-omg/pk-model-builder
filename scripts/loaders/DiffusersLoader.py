@@ -14,6 +14,9 @@ class DiffusersLoader(object):
         
 
     def load(self, output_dir):
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
         os.system(f"git clone {self.url} tmp")
         convert_diff_to_sd.convert("tmp", os.path.join(output_dir, f"{self.name}.ckpt"), half=self.half, use_safetensors=self.use_safetensors)
         shutil.rmtree("tmp")
