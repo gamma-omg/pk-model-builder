@@ -1,6 +1,6 @@
 FROM python:3.10-slim as builder
 
-COPY scripts/requirements.txt /builder
+COPY scripts/requirements.txt /builder/
 WORKDIR /builder
 RUN pip install -r scripts/requirements.txt
 
