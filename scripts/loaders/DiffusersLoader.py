@@ -17,7 +17,10 @@ class DiffusersLoader(object):
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
-        os.system(f"git clone {self.url} tmp")
+        ret = os.system(f"git clone {self.url} tmp")
+        if ret != 0:
+            raise Exception(f"Failed to clone {self.url}")
+        
         convert_diff_to_sd.convert("tmp", os.path.join(output_dir, f"{self.name}.ckpt"), half=self.half, use_safetensors=self.use_safetensors)
         shutil.rmtree("tmp")
         shutil.copy(self.config_path, os.path.join(output_dir, f"{self.name}.yaml"))
