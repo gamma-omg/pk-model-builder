@@ -1,4 +1,4 @@
-import convert_diff_to_sd
+import utils.convert_diff_to_sd as convert_diff_to_sd
 import argparse
 
 if __name__ == '__main__':
