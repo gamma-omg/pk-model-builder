@@ -1,4 +1,4 @@
-FROM pyton:3.10 as builder
+FROM python:3.10-slim as builder
 
 COPY scripts/requirements.txt /builder
 WORKDIR /builder
