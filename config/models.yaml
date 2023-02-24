@@ -2,14 +2,7 @@ models:
   pk-icons:    
     loader: DiffusersLoader
     data:    
-      url: https://huggingface.co/gamma-omg/pk-icons
-      config: config/768-config-template.yaml
-      half: True
-      use_safetensors: False
-  pk-heroes:
-    loader: DiffusersLoader
-    data:
-      url: https://huggingface.co/gamma-omg/pk-heroes-v2
+      model_name: gamma-omg/pk-icons
       config: config/768-config-template.yaml
       half: True
       use_safetensors: False

@@ -4,8 +4,9 @@ COPY scripts/requirements.txt /builder/
 WORKDIR /builder
 RUN pip install -r requirements.txt
 
-COPY config scripts /builder/
-RUN python scripts/load-models.py --models="config/models.yaml" --output_dir="models"
+COPY config .
+COPY scripts .
+RUN python scripts/model_loader.py --config="config/models.yaml" --dst="models"
 
 
 FROM runpod/stable-diffusion:web-automatic-2.1.10
