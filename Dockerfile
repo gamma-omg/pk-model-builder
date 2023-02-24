@@ -1,13 +1,15 @@
 FROM runpod/stable-diffusion:web-automatic-2.1.10
 
-RUN rm /workspace/stable-diffusion-webui/models/Stable-diffusion/*
+RUN rm -rf /workspace/stable-diffusion-webui/models/Stable-diffusion/*
+RUN apt update && apt install -y python3-pip build-essential curl
 
-COPY scripts/requirements.txt /workspace/models/
-WORKDIR /workspace/models/
-RUN pip install -r requirements.txt
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
-COPY config/ .
-COPY scripts/ .
-RUN python3 model_loader.py --config="config/models.yaml" --dst="/workspace/stable-diffusion-webui/models/Stable-diffusion/"
+COPY scripts/requirements.txt /workspace/model_updater/
+WORKDIR /workspace/model_updater
+RUN --mount=type=cache,target=/var/cache/pip pip3 install -r requirements.txt
+COPY scripts/ ./scripts
+COPY config/ ./config
 
+WORKDIR /workspace/stable-diffusion-webui
 COPY relauncher.py /workspace/stable-diffusion-webui/

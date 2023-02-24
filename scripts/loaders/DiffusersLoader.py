@@ -7,10 +7,10 @@ from huggingface_hub import snapshot_download
 
 class DiffusersLoader(object):
 
-    def __init__(self, name, data) -> None:
+    def __init__(self, name, data, config_root) -> None:
         self.name = name
         self.model_name = data['model_name']
-        self.config_path = data['config']
+        self.config_path = os.path.join(config_root, data['config'])
         self.half = data.get('half', False)
         self.use_safetensors = data.get('use_safetensors', False)
         self.hf_user = os.environ.get('HF_USER', None)

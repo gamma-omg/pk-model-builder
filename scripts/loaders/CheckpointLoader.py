@@ -3,10 +3,10 @@ import shutil
 
 
 class CheckpointLoader(object):
-    def __init__(self, name, data):
+    def __init__(self, name, data, config_root):
         self.name = name
         self.url = data['url']
-        self.config_path = data['config']
+        self.config_path = os.path.join(config_root, data['config'])
         
     
     def load(self, output_dir):
