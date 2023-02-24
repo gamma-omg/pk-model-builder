@@ -1,4 +1,5 @@
 torch
 safetensors
 numpy
+pyyaml
 huggingface_hub
