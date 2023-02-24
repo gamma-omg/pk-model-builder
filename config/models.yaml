@@ -1,8 +1,43 @@
 models:
-  pk-icons:    
+  pk-icons:
     loader: DiffusersLoader
-    data:    
-      model_name: gamma-omg/pk-icons
+    data:
+      url: gamma-omg/pk-icons
+      config: config/768-config-template.yaml
+      half: True
+      use_safetensors: False
+  pk-heroes:
+    loader: DiffusersLoader
+    data:
+      url: gamma-omg/pk-heroes-v2
+      config: config/768-config-template.yaml
+      half: True
+      use_safetensors: False
+  pk-art:
+    loader: DiffusersLoader
+    data:
+      url: gamma-omg/pk-art
+      config: config/768-config-template.yaml
+      half: True
+      use_safetensors: False
+  pk-art-v2:
+    loader: DiffusersLoader
+    data:
+      url: gamma-omg/pk-art-v2
+      config: config/768-config-template.yaml
+      half: True
+      use_safetensors: False
+  pk-emoji:
+    loader: DiffusersLoader
+    data:
+      url: pk-emoji
+      config: config/768-config-template.yaml
+      half: True
+      use_safetensors: False
+  pk-icons-ui:
+    loader: DiffusersLoader
+    data:
+      url: gamma-omg/pk-icons-ui
       config: config/768-config-template.yaml
       half: True
       use_safetensors: False
