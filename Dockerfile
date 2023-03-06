@@ -3,11 +3,6 @@ FROM runpod/stable-diffusion:web-automatic-2.1.16
 RUN apt update && apt install -y python3-pip build-essential curl git-lfs
 
 RUN rm -rf /workspace/stable-diffusion-webui/models/Stable-diffusion/*
-RUN git clone https://github.com/Mikubill/sd-webui-controlnet.git /workspace/stable-diffusion-webui/extensions/sd-webui-controlnet
-RUN rm -rf /workspace/stable-diffusion-webui/extensions/sd-webui-controlnet/models
-WORKDIR /workspace/stable-diffusion-webui/extensions/sd-webui-controlnet/models
-RUN git clone https://huggingface.co/webui/ControlNet-modules-safetensors . && git lfs pull
-
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
 COPY scripts/requirements.txt /workspace/model_updater/
