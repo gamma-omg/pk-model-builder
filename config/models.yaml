@@ -13,13 +13,6 @@ models:
       config: templates/768-config-template.yaml
       half: True
       use_safetensors: False
-  pk-art:
-    loader: DiffusersLoader
-    data:
-      model_name: gamma-omg/pk-art
-      config: templates/768-config-template.yaml
-      half: True
-      use_safetensors: False
   pk-art-v2:
     loader: DiffusersLoader
     data:
