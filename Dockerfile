@@ -1,4 +1,4 @@
-FROM runpod/stable-diffusion:web-automatic-2.1.10
+FROM runpod/stable-diffusion:web-automatic-2.1.16
 
 RUN apt update && apt install -y python3-pip build-essential curl git-lfs
 
