@@ -7,7 +7,8 @@ class CheckpointLoader(object):
         self.name = name
         self.repo = data['repo']
         self.file = data['file']
-        self.config_path = os.path.join(config_root, data.get('config', None))
+        self.config_root = config_root
+        self.config_path = data.get('config', None)
         
     
     def load(self, output_dir):
@@ -18,4 +19,5 @@ class CheckpointLoader(object):
         shutil.copy(file, os.path.join(output_dir, f"{self.name}.ckpt"))        
 
         if self.config_path is not None:
-            shutil.copy(self.config_path, os.path.join(output_dir, f"{self.name}.yaml"))
+            config_file = os.path.join(self.config_root, self.config_path)
+            shutil.copy(config_file, os.path.join(output_dir, f"{self.name}.yaml"))
