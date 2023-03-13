@@ -1,0 +1,5 @@
+models:
+  pk-characters:
+    loader: RepoLoader
+    data:      
+      repo: "gamma-omg/pk-characters"

@@ -21,6 +21,9 @@ def instantiate_loader(model_name, loader_cls, data, config_root):
     elif loader_cls == 'CheckpointLoader':
         from loaders.CheckpointLoader import CheckpointLoader
         return CheckpointLoader(model_name, data, config_root)
+    elif loader_cls == 'RepoLoader':
+        from loaders.RepoLoader import RepoLoader
+        return RepoLoader(model_name, data, config_root)
     else:
         raise ValueError(f'Unknown loader: {loader_cls}')
 
