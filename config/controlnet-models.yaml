@@ -3,14 +3,14 @@ models:
     loader: CheckpointLoader
     data:
       repo: lllyasviel/ControlNet
-      file: control_sd15_canny.pth
+      file: models/control_sd15_canny.pth
   control_sd15_openpose:
     loader: CheckpointLoader
     data:
       repo: lllyasviel/ControlNet
-      file: control_sd15_openpose.pth
+      file: models/control_sd15_openpose.pth
   control_sd15_scribble:
     loader: CheckpointLoader
     data:
       repo: lllyasviel/ControlNet
-      file: control_sd15_scribble.pth
+      file: models/control_sd15_scribble.pth
