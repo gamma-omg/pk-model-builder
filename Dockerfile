@@ -7,6 +7,7 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
 WORKDIR /workspace/stable-diffusion-webui/extensions
 RUN git clone https://github.com/Mikubill/sd-webui-controlnet.git
+RUN git clone https://github.com/KutsuyaYuki/ABG_extension.git
 
 COPY scripts/requirements.txt /workspace/model_updater/
 WORKDIR /workspace/model_updater
