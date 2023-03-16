@@ -13,8 +13,6 @@ class DiffusersLoader(object):
         self.config_path = os.path.join(config_root, data['config'])
         self.half = data.get('half', False)
         self.use_safetensors = data.get('use_safetensors', False)
-        self.hf_user = os.environ.get('HF_USER', None)
-        self.hf_token = os.environ.get('HF_TOKEN', None)
         self.hf_api = HfApi()
         
 
@@ -29,10 +27,10 @@ class DiffusersLoader(object):
         if hash == model_info.sha and os.path.exists(ckpt_file):
             logging.info(f"Model {self.name} is up to date")
             return
-
-        shutil.copy(self.config_path, os.path.join(output_dir, f"{self.name}.yaml"))
+        
         repo = snapshot_download(self.model_name, token=True)
         convert_diff_to_sd.convert(repo, ckpt_file, half=self.half, use_safetensors=self.use_safetensors)
+        shutil.copy(self.config_path, os.path.join(output_dir, f"{self.name}.yaml"))
         self.write_hash(hash_file, model_info.sha)
 
     
