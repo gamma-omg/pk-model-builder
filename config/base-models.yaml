@@ -34,6 +34,12 @@ models:
       config: templates/768-config-template.yaml
       half: True
       use_safetensors: False
+  pk-app-icon:
+    loader: CheckpointLoader
+    data:
+      repo: gamma-omg/pk-app-icon
+      file: pk-app-icon.ckpt
+      config: templates/512-config-template.yaml
   sd-15:
     loader: CheckpointLoader
     data:
