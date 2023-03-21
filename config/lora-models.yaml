@@ -1,5 +1,66 @@
 models:
-  pk-characters:
-    loader: RepoLoader
+  pk-characters/blue_agatha:
+    loader: FileLoader
+    symlink: True
     data:      
       repo: "rj-games/pk-characters"
+      file:
+        - blue_agatha.safetensors
+        - blue_agatha.png      
+  pk-characters/blue_ice_queen:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - blue_ice_queen.safetensors
+        - blue_ice_queen.png
+  pk-characters/green_pathfinder:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - green_pathfinder.safetensors
+        - green_pathfinder.png
+  pk-characters/purple_dark_ranger:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - purple_dark_ranger.safetensors
+        - purple_dark_ranger.png
+  pk-characters/purple_lady_shooter:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - purple_lady_shooter.safetensors
+        - purple_lady_shooter.png
+  pk-characters/red_dragon_blade:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - red_dragon_blade.safetensors
+        - red_dragon_blade.png
+  pk-characters/yellow_paladin:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - yellow_paladin.safetensors
+        - yellow_paladin.png
+  pk-characters/yellow_valkyrie:
+    loader: FileLoader
+    symlink: True
+    data:      
+      repo: "rj-games/pk-characters"
+      file:
+        - yellow_valkyrie.safetensors
+        - yellow_valkyrie.png
+  
