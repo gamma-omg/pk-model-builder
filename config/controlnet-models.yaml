@@ -1,16 +1,19 @@
 models:
   control_sd15_canny:
-    loader: CheckpointLoader
+    loader: FileLoader
     data:
       repo: lllyasviel/ControlNet
       file: models/control_sd15_canny.pth
+      symlink: True
   control_sd15_openpose:
-    loader: CheckpointLoader
+    loader: FileLoader
     data:
       repo: lllyasviel/ControlNet
       file: models/control_sd15_openpose.pth
+      symlink: True
   control_sd15_scribble:
-    loader: CheckpointLoader
+    loader: FileLoader
     data:
       repo: lllyasviel/ControlNet
       file: models/control_sd15_scribble.pth
+      symlink: True

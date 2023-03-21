@@ -1,48 +1,50 @@
 models:
-  pk-icons:
-    loader: DiffusersLoader
-    data:
-      model_name: gamma-omg/pk-icons
-      config: templates/768-config-template.yaml
-      half: True
-      use_safetensors: False
-  pk-heroes:
-    loader: DiffusersLoader
-    data:
-      model_name: gamma-omg/pk-heroes-v2
-      config: templates/768-config-template.yaml
-      half: True
-      use_safetensors: False
-  pk-art-v2:
-    loader: DiffusersLoader
-    data:
-      model_name: gamma-omg/pk-art-v2
-      config: templates/768-config-template.yaml
-      half: True
-      use_safetensors: False
-  pk-emoji:
-    loader: DiffusersLoader
-    data:
-      model_name: gamma-omg/pk-emoji
-      config: templates/768-config-template.yaml
-      half: True
-      use_safetensors: False
-  pk-icons-ui:
-    loader: DiffusersLoader
-    data:
-      model_name: gamma-omg/pk-icons-ui
-      config: templates/768-config-template.yaml
-      half: True
-      use_safetensors: False
   pk-app-icon:
-    loader: CheckpointLoader
+    loader: FileLoader
     data:
-      repo: gamma-omg/pk-app-icon
+      repo: rj-games/pk-app-icon
       file: pk-app-icon.ckpt
       config: templates/512-config-template.yaml
+      symlink: True
+  pk-icons:
+    loader: FileLoader
+    data:
+      repo: rj-games/pk-icons
+      file: pk-icons.ckpt
+      config: templates/768-config-template.yaml
+      symlink: True
+  pk-avatars:
+    loader: FileLoader
+    data:
+      repo: rj-games/pk-heroes-v2
+      file: pk-heroes-v2.ckpt
+      config: templates/768-config-template.yaml
+      symlink: True
+  pk-art:
+    loader: FileLoader
+    data:
+      repo: rj-games/pk-art-v2
+      file: pk-art-v2.ckpt
+      config: templates/768-config-template.yaml
+      symlink: True
+  pk-emoji:
+    loader: FileLoader
+    data:
+      repo: rj-games/pk-emoji
+      file: pk-emoji.ckpt
+      config: templates/768-config-template.yaml
+      symlink: True
+  pk-icons-ui:
+    loader: FileLoader
+    data:
+      repo: rj-games/pk-icons-ui
+      file: pk-icons-ui.ckpt
+      config: templates/768-config-template.yaml
+      symlink: True
   sd-15:
-    loader: CheckpointLoader
+    loader: FileLoader
     data:
       repo: runwayml/stable-diffusion-v1-5
       file: v1-5-pruned-emaonly.ckpt
       config: templates/512-config-template.yaml
+      symlink: True
