@@ -2,4 +2,4 @@ models:
   pk-characters:
     loader: RepoLoader
     data:      
-      repo: "gamma-omg/pk-characters"
+      repo: "rj-games/pk-characters"
