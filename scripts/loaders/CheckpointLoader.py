@@ -15,9 +15,12 @@ class CheckpointLoader(object):
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
-        file = hf_hub_download(repo_id=self.repo, filename=self.file, token=True)
-        os.link(file, os.path.join(output_dir, f"{self.name}.ckpt"))
+        src_file = hf_hub_download(repo_id=self.repo, filename=self.file, token=True)
+        dst_file = os.path.join(output_dir, f"{self.name}.ckpt")
+        if os.path.exists(dst_file):
+            os.remove(dst_file)
 
+        os.symlink(src_file, dst_file)        
         if self.config_path is not None:
             config_file = os.path.join(self.config_root, self.config_path)
             shutil.copy(config_file, os.path.join(output_dir, f"{self.name}.yaml"))
