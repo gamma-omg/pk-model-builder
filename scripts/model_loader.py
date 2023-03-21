@@ -18,7 +18,7 @@ def instantiate_loader(model_name, loader_cls, data, config_root):
     if loader_cls == 'DiffusersLoader':
         from loaders.DiffusersLoader import DiffusersLoader
         return DiffusersLoader(model_name, data, config_root)
-    elif loader_cls == 'CheckpointLoader':
+    elif loader_cls == 'FileLoader':
         from loaders.FileLoader import FileLoader
         return FileLoader(model_name, data, config_root)
     elif loader_cls == 'RepoLoader':
