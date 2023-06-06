@@ -16,5 +16,7 @@ RUN --mount=type=cache,target=/var/cache/pip pip3 install -r requirements.txt
 COPY scripts/ ./scripts
 COPY config/ ./config
 
+COPY pre_start.sh /
+
 WORKDIR /stable-diffusion-webui
 COPY relauncher.py /stable-diffusion-webui/

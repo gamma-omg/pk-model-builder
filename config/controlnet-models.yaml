@@ -2,18 +2,18 @@ models:
   control_sd15_canny:
     loader: FileLoader
     data:
-      repo: lllyasviel/ControlNet
-      file: models/control_sd15_canny.pth
+      repo: webui/ControlNet-modules-safetensors
+      file: control_canny-fp16.safetensors
       symlink: True
   control_sd15_openpose:
     loader: FileLoader
     data:
-      repo: lllyasviel/ControlNet
-      file: models/control_sd15_openpose.pth
+      repo: webui/ControlNet-modules-safetensors
+      file: control_openpose-fp16.safetensors
       symlink: True
   control_sd15_scribble:
     loader: FileLoader
     data:
-      repo: lllyasviel/ControlNet
-      file: models/control_sd15_scribble.pth
+      repo: webui/ControlNet-modules-safetensors
+      file: control_scribble-fp16.safetensors
       symlink: True
