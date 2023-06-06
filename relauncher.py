@@ -7,9 +7,9 @@ while True:
     if n > 0:
         print(f'\tRelaunch count: {n}')
 
-    os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/base-models.yaml --dst=models/Stable-diffusion/")
-    os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/lora-models.yaml --dst=models/Lora/")
-    os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/controlnet-models.yaml --dst=extensions/sd-webui-controlnet/models/")
+    os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/base-models.yaml --dst=/stable-diffusion-webui/models/Stable-diffusion/")
+    os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/lora-models.yaml --dst=/stable-diffusion-webui/models/Lora/")
+    os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/controlnet-models.yaml --dst=/stable-diffusion-webui/extensions/sd-webui-controlnet/models/")
 
     launch_string = "/workspace/stable-diffusion-webui/webui.sh -f"
     os.system(launch_string)
