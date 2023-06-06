@@ -1,5 +1,5 @@
 FROM runpod/stable-diffusion:web-automatic-8.0.1
-RUN rm -rf /sd-models/* && rm -rf cn-models/*
+RUN rm -rf /sd-models/* && rm -rf /cn-models/*
 
 RUN apt update && apt install -y python3-pip build-essential curl git-lfs
 
