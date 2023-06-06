@@ -6,7 +6,7 @@ RUN rm -rf /stable-diffusion-webui/models/Stable-diffusion/*
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
 WORKDIR /stable-diffusion-webui/extensions
-RUN git clone https://github.com/Mikubill/sd-webui-controlnet.git
+# RUN git clone https://github.com/Mikubill/sd-webui-controlnet.git
 RUN git clone https://github.com/KutsuyaYuki/ABG_extension.git
 RUN pip install onnx onnxruntime-gpu opencv-python numpy pillow
 
