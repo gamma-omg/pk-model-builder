@@ -17,6 +17,7 @@ COPY scripts/ ./scripts
 COPY config/ ./config
 
 COPY pre_start.sh /
+RUN chmod +x /pre_start.sh
 
 WORKDIR /stable-diffusion-webui
 COPY relauncher.py /stable-diffusion-webui/
