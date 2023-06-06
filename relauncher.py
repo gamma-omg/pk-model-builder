@@ -11,10 +11,8 @@ while True:
     os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/lora-models.yaml --dst=models/Lora/")
     os.system("python /model_updater/scripts/model_loader.py --config=/model_updater/config/controlnet-models.yaml --dst=extensions/sd-webui-controlnet/models/")
 
-    launch_cmd = "python webui.py --api --port 7861 --xformers --opt-split-attention --listen --enable-insecure-extension-access"
-    if gradio_auth:
-        launch_cmd += " --gradio-auth " + gradio_auth
-    os.system(launch_cmd)
+    launch_string = "/workspace/stable-diffusion-webui/webui.sh -f"
+    os.system(launch_string)
     print('Relauncher: Process is ending. Relaunching in 2s...')
     n += 1
     time.sleep(2)
