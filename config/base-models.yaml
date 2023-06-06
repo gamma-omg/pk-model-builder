@@ -1,47 +1,47 @@
 models:
-  pk-app-icon:
+  pk-app-icon-512:
     loader: FileLoader
     data:
       repo: rj-games/pk-app-icon
       file: pk-app-icon.safetensors
       config: templates/512-config-template.yaml
       symlink: True
-  pk-icons:
+  pk-icons-768:
     loader: FileLoader
     data:
       repo: rj-games/pk-icons
       file: pk-icons.safetensors
       config: templates/768-config-template.yaml
       symlink: True
-  pk-avatars:
+  pk-avatars-768:
     loader: FileLoader
     data:
       repo: rj-games/pk-heroes-v2
       file: pk-heroes-v2.safetensors
       config: templates/768-config-template.yaml
       symlink: True
-  pk-art:
+  pk-art-768:
     loader: FileLoader
     data:
       repo: rj-games/pk-art-v2
       file: pk-art-v2.safetensors
       config: templates/768-config-template.yaml
       symlink: True
-  pk-emoji:
+  pk-emoji-768:
     loader: FileLoader
     data:
       repo: rj-games/pk-emoji
       file: pk-emoji.safetensors
       config: templates/768-config-template.yaml
       symlink: True
-  pk-icons-ui:
+  pk-icons-ui-768:
     loader: FileLoader
     data:
       repo: rj-games/pk-icons-ui
       file: pk-icons-ui.safetensors
       config: templates/768-config-template.yaml
       symlink: True
-  sd-15:
+  sd-15-512:
     loader: FileLoader
     data:
       repo: runwayml/stable-diffusion-v1-5
