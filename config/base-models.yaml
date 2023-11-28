@@ -48,3 +48,18 @@ models:
       file: v1-5-pruned-emaonly.safetensors
       config: templates/512-config-template.yaml
       symlink: True
+  sd-xl-base-1024:
+    loader: FileLoader
+    data:
+      repo: stabilityai/stable-diffusion-xl-base-1.0
+      file: sd_xl_base_1.0.safetensors
+      config: templates/1024-config-template.yaml
+      symlink: True
+  sd-xl-refiner-1024:
+    loader: FileLoader
+    data:
+      repo: stabilityai/stable-diffusion-xl-refiner-1.0
+      file: sd_xl_refiner_1.0.safetensors
+      config: templates/1024-config-template.yaml
+      symlink: True
+      
