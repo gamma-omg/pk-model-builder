@@ -1,4 +1,4 @@
-FROM runpod/stable-diffusion:web-ui-10.2.1
+FROM runpod/stable-diffusion:web-ui-12.0.0
 RUN rm -rf /sd-models/* && rm -rf /cn-models/*
 
 RUN apt update && apt install -y python3-pip build-essential curl git-lfs
